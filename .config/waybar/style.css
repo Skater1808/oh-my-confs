@@ -1,0 +1,71 @@
+/* Catppuccin Mocha Farbpalette */
+@define-color base      #1e1e2e;
+@define-color mantle    #181825;
+@define-color crust     #11111b;
+@define-color text      #cdd6f4;
+@define-color subtext0  #a6adc8;
+@define-color surface0  #313244;
+@define-color surface1  #43465e;
+@define-color surface2  #585b70;
+@define-color lavender  #b4befe;
+@define-color blue      #89b4fa;
+@define-color sky       #89dceb;
+@define-color teal      #94e2d5;
+@define-color green     #a6e3a1;
+@define-color yellow    #f9e2af;
+@define-color mauve     #cba6f7;
+@define-color red       #f38ba8;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: @mantle;
+    color: @text;
+    border-bottom: 2px solid @surface0;
+}
+
+/* Container für einzelne Module */
+#clock, #cpu, #memory, #network, #pulseaudio, #tray {
+padding: 0 12px;
+margin: 5px 3px;
+background-color: @base;
+border-radius: 6px;
+border: 1px solid @surface1;
+}
+
+#clock { color: @lavender; }
+#cpu { color: @yellow; }
+#memory { color: @sky; }
+#network { color: @teal; }
+#pulseaudio { color: @green; }
+#pulseaudio.muted { color: @red; }
+
+/* Desktop Tasten (Workspaces) */
+#workspaces button {
+padding: 0 12px;
+margin: 5px 3px;
+background-color: @base;
+color: @subtext0;
+border-radius: 6px;
+border: 1px solid @surface0;
+transition: all 0.15s ease;
+}
+
+/* Aktiver Desktop (In tollem Mauve-Lila hervorgehoben) */
+#workspaces button.active {
+background-color: @mauve;
+color: @crust;
+border-color: @mauve;
+font-weight: bold;
+}
+
+#workspaces button:hover {
+background-color: @surface2;
+color: @text;
+
+}

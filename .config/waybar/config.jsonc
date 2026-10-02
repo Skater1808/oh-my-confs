@@ -1,0 +1,48 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "spacing": 4,
+
+    // Anordnung der Module auf der Leiste
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock", "tray"],
+
+    // Konfiguration der klickbaren Desktops
+    "hyprland/workspaces": {
+        "disable-scroll": false, // Erlaubt Mausrad-Wechseln über der Bar
+        "all-outputs": true,
+        "format": "{name}",
+        "show-special": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+    "clock": {
+        "format": "   {:%H:%M │ %d.%m.%Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "format": "  {usage}%"
+    },
+    "memory": {
+        "format": "  {}%"
+    },
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "    LAN",
+        "format-disconnected": "    Offline"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "   Muted",
+        "format-icons": {
+            "default": ["  ", "  ", "  "]
+        }
+    }
+}

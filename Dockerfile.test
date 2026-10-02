@@ -1,0 +1,28 @@
+FROM archlinux:latest
+
+# Nicht-interaktive Installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Base packages + sudo + git + python (für yay)
+RUN pacman -Syu --noconfirm && \
+    pacman -S --noconfirm base-devel git sudo python curl wget
+
+# Test-User erstellen
+RUN useradd -m -G wheel -s /bin/bash testuser && \
+    echo "testuser ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+# Zu testuser wechseln
+USER testuser
+WORKDIR /home/testuser
+
+# yay installieren
+RUN git clone https://aur.archlinux.org/yay.git /tmp/yay && \
+    cd /tmp/yay && \
+    makepkg -si --noconfirm && \
+    rm -rf /tmp/yay
+
+# Dotfiles klonen (wir mounten sie später, aber für Test kopieren wir sie)
+# WORKDIR /home/testuser/oh-my-confs
+
+# Default command
+CMD ["/bin/bash"]

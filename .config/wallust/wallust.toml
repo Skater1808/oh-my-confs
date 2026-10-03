@@ -1,0 +1,7 @@
+# wallust configuration
+# Generated for wofi + kitty + waybar theming
+
+[templates]
+wofi = { src = "wofi.j2", dst = "~/.config/wofi/style.css" }
+kitty = { src = "kitty.conf", dst = "~/.config/kitty/colors.conf" }
+waybar = { src = "waybar.css", dst = "~/.config/waybar/style.css" }

@@ -1,48 +1,75 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 36,
-    "spacing": 4,
-
-    // Anordnung der Module auf der Leiste
+    "height": 30,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock", "tray"],
-
-    // Konfiguration der klickbaren Desktops
+    "modules-right": ["pulseaudio", "network", "memory", "cpu", "battery", "clock", "tray"],
+    
     "hyprland/workspaces": {
-        "disable-scroll": false, // Erlaubt Mausrad-Wechseln über der Bar
+        "disable-scroll": true,
         "all-outputs": true,
-        "format": "{name}",
-        "show-special": true,
-        "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": []
-        }
-    },
-    "clock": {
-        "format": "   {:%H:%M │ %d.%m.%Y}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "cpu": {
-        "format": "  {usage}%"
-    },
-    "memory": {
-        "format": "  {}%"
-    },
-    "network": {
-        "format-wifi": "  {essid}",
-        "format-ethernet": "    LAN",
-        "format-disconnected": "    Offline"
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "   Muted",
+        "format": "{icon}",
         "format-icons": {
-            "default": ["  ", "  ", "  "]
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "active": "●",
+            "inactive": "○"
         }
+    },
+    
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 50
+    },
+    
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d %H:%M:%S}"
+    },
+    
+    "cpu": {
+        "format": "CPU {usage}%",
+        "interval": 1
+    },
+    
+    "memory": {
+        "format": "RAM {}%",
+        "interval": 1
+    },
+    
+    "network": {
+        "format": "{ifname}: {ipaddr}",
+        "interval": 10
+    },
+    
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-muted": "MUTED",
+        "format-icons": {
+            "headphone": "🎧",
+            "hands-free": "🎧",
+            "headset": "🎧",
+            "phone": "📞",
+            "portable": "📱",
+            "car": "🚗",
+            "default": ["🔈", "🔉", "🔊"]
+        }
+    },
+    
+    "battery": {
+        "format": "BAT {capacity}% {icon}",
+        "format-charging": "CHG {capacity}% ⚡",
+        "format-plugged": "BAT {capacity}% 🔌",
+        "format-alt": "{time} {icon}",
+        "interval": 30
+    },
+    
+    "tray": {
+        "icon-size": 16,
+        "spacing": 4
     }
 }

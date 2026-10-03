@@ -89,7 +89,7 @@ hl.env("XCURSOR_SIZE", "32")
 hl.config({
     general = {
         gaps_in  = 5,
-        gaps_out = 20,
+        gaps_out = 15,
 
         border_size = 2,
 
@@ -257,7 +257,7 @@ hl.device({
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 local closeWindowBind = hl.bind(mainMod .. " + W", hl.dsp.window.close())
 
-hl.bind(mainMod .. " + CTRL + SPACE", hl.dsp.exec_cmd("cd /home/emil/Dokumente/Scripte/ && ./random_wallpaper.sh"))
+hl.bind(mainMod .. " + CTRL + SPACE", hl.dsp.exec_cmd("/home/emil/Dokumente/Scripte/change-wallpaper.sh"))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + ESCAPE", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd(fileManager))
